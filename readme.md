@@ -21,4 +21,5 @@ The application allows users to draw polylines on a map and then simplifies thes
 
 ## Web Link
 
-To access the website without downloading anything, you may click here https://mitchell-aitken.github.io/ENGO551Lab6/
+To access the website without downloading anything, you may click here 
+https://mitchell-aitken.github.io/ENGO551Lab6/
