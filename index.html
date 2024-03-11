@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ENGO 551 Lab 6</title>
+    <!-- leaflet's main stylesheet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- leaflet routing machine for those cool route features -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- routing functionalities, pretty handy -->
+    <script src="https://unpkg.com/leaflet-routing-machine"></script>
+    <!-- turf.js for some geo-magic -->
+    <script src="https://unpkg.com/@turf/turf"></script>
+    <!-- big styling time -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #303030; /* dark mode, because why not? */
+            color: #ffffff;
+        }
+
+        #mapid {
+            height: 600px; /* decent height for visibility */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* a little shadow for aesthetics */
+        }
+
+        button {
+            background-color: #424242; /* subtle gray, looks sleek */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px; /* rounded corners are the way to go */
+            cursor: pointer; /* because clicking is fun */
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #535353; /* a bit lighter on hover, just for the effect */
+        }
+
+        h1 {
+            text-align: center; /* centering the title for better look */
+            margin: 20px 0;
+            font-size: 24px; /* not too big, not too small */
+        }
+
+        .slider-container {
+            text-align: center; /* keeps the slider in check */
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lab 6 - Line Simplification for Web Mapping Applications</h1>
+    <h2> ENGO 551 - Mitchell Aitken</h2>
+    <div id="mapid"></div>
+    <!-- slider to adjust the tolerance, interactive stuff -->
+    <div class="slider-container">
+        <label for="tolerance">Simplification Tolerance: <span id="toleranceValue">0.01</span></label>
+        <input type="range" id="tolerance" min="0.001" max="1" step="0.001" value="0.01">
+    </div>
+    <!-- a reset button -->
+    <button id="reset">Reset</button>
+    <!-- simplify button-->
+    <button id="simplify">Simplify Route</button>
+
+    <!-- linking the javascript file, where the magic happens -->
+    <script src="app.js"></script>
+</body>
+</html>
